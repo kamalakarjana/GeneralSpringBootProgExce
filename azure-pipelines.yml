@@ -15,7 +15,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-     name: AgentNewHLK
+     name: Default
      demands: mvn
     steps:
     - task: Maven@4
@@ -39,7 +39,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-     name: AgentNewHLK
+     name: Default
      demands: mvn
     environment: dev
     strategy:
@@ -54,7 +54,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-     name: AgentNewHLK
+     name: Default
      demands: mvn
     environment: Test
     strategy:
@@ -69,7 +69,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-     name: AgentNewHLK
+     name: Default
      demands: mvn
     environment: staging
     strategy:
